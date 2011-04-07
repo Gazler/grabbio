@@ -29,6 +29,7 @@ module Grabbio
       parameters = parameters_to_string(opts)
       parameters += "&server_time=#{Time.now.to_i}"
       parameters += "&token=#{@api_key}"
+      p parameters
       parameters += "&hash=#{sign_request(@api_secret, parameters.slice!(0))}"
       url = API_URL+API_VERSION+"/videos.json?#{parameters}"
       p url
