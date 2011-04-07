@@ -31,7 +31,7 @@ module Grabbio
       parameters = parameters_to_string(opts)
       hash = sign_request(@api_secret, parameters[1..-1])
       parameters += "&hash=#{hash}"
-      url = API_URL+API_VERSION+"/videos.json?#{parameters}"
+      url = API_URL+API_VERSION+"/videos.json#{parameters}"
       p url
       make_request(url)
     end
