@@ -16,6 +16,8 @@ module Grabbio
     end
 
     def grab(source, upload_url, opts = {})
+      opts[:source] = source
+      opts[:upload_url] = upload_url
       parameters = opts.to_query
       parameters += "&server_time=#{Time.now.to_i}"
       parameters += "&token=#{@api_key}"
