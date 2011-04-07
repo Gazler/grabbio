@@ -24,12 +24,13 @@ module Grabbio
     def grab(source, upload_url, opts = {})
       raise ArgumentError.new("Source URL must be a URL") unless source.is_a? String
       raise ArgumentError.new("Upload URL must be a URL") unless upload_url.is_a? String
+      opts[:token] = @api_key
       opts[:source] = source
       opts[:upload_url] = upload_url
+      opts[:server_time] = Time.now.to_i
       parameters = parameters_to_string(opts)
-      parameters += "&server_time=#{Time.now.to_i}"
-      parameters += "&token=#{@api_key}"
-      parameters += "&hash=#{sign_request(@api_secret, parameters[1..-1])}"
+      hash = sign_request(@api_secret, parameters[1..-1])
+      parameters += "&hash=#{hash}"
       url = API_URL+API_VERSION+"/videos.json?#{parameters}"
       p url
       make_request(url)
