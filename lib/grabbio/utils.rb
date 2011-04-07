@@ -35,7 +35,7 @@ module Grabbio
       if !result["error"].nil?
         raise GrabbioError.new(result["error"])
       elsif !result["errors"].nil?
-        result["errors"].each |k,v|
+        result["errors"].each do |k,v|
           raise GrabbioError.new("#{k} #{v}")
         end
       else
