@@ -20,6 +20,7 @@ module Grabbio
     end
 
     def sign_request(secret_key, parameters)
+      p parameters
        Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), secret_key,parameters)).chomp.gsub(/\n/,'')
     end
 
