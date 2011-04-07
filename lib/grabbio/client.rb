@@ -19,7 +19,6 @@ module Grabbio
       @api_key
     end
 
-    end
   end
 
 end
