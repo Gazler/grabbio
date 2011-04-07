@@ -22,6 +22,8 @@ module Grabbio
     end
 
     def grab(source, upload_url, opts = {})
+      raise ArgumentError.new("Source URL must be a URL") unless source.is_a? String
+      raise ArgumentError.new("Upload URL must be a URL") unless upload.is_a? String
       opts[:source] = source
       opts[:upload_url] = upload_url
       parameters = parameters_to_string(opts)
