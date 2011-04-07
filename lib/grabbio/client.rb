@@ -1,4 +1,6 @@
+require 'rubygems'
 require 'net/http'
+require 'uri'
 
 module Grabbio
   API_URL = "http://grabb.io/api/"
