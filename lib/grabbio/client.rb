@@ -6,7 +6,7 @@ module Grabbio
 
 
   def self.new(api_key, api_secret)
-    Bitly::Client.new(api_key, api_secret)
+    Grabbio::Client.new(api_key, api_secret)
   end
 
   class Client
