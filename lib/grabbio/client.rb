@@ -10,6 +10,9 @@ module Grabbio
   end
 
   class Client
+
+    include Grabbio::Utils
+
     def initialize(api_key, api_secret)
       @api_key = api_key
       @api_secret = api_secret
