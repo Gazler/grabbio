@@ -31,12 +31,13 @@ module Grabbio
       parameters += "&token=#{@api_key}"
       parameters += "&hash=#{sign_request(@api_secret, parameters)}"
       url = API_URL+API_VERSION+"/videos.json#{parameters}"
-      url = URI.parse(URI.escape(url))
-      body = Net::HTTP.get_response(url).body
-      JSON.parse(body)
+      make_request(url)
     end
 
   end
+end
 
+
+class GrabbioError < StandardError
 end
 

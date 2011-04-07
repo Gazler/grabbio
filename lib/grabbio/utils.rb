@@ -22,6 +22,28 @@ module Grabbio
     def sign_request(secret_key, parameters)
        Base64.encode64(OpenSSL::HMAC.digest(OpenSSL::Digest::Digest.new('sha1'), secret_key,parameters)).chomp.gsub(/\n/,'')
     end
+
+    def make_request(request)
+      url = URI.parse(URI.escape(request))
+      body = Net::HTTP.get_response(url).body
+      begin
+        result = JSON.parse(body)
+      rescue
+        result = {'error' => 'JSON Parse Error (grabb.io got it wrong)'}
+      end
+
+      if !result["error"].nil?
+        raise GrabbioError.new(result["error"])
+      elsif !result["errors"].nil?
+        result["errors"].each |k,v|
+          raise GrabbioError.new("#{k} #{v}")
+        end
+      else
+        result
+      end
+
+
+    end
   end
 end
 
