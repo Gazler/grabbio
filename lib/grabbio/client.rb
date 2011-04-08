@@ -4,7 +4,7 @@ require 'uri'
 require 'json'
 
 module Grabbio
-  API_URL = "http://localhost:3000/api/"
+  API_URL = "http://grabb.io/api/"
   API_VERSION = "v1"
 
 
