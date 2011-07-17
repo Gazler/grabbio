@@ -4,7 +4,7 @@ require 'openssl'
 module Grabbio
   module Utils
 
-    def parameters_to_string(parameters)
+    def parameters_to_string(parameters = {})
       first = true
       args = ""
       parameters.each do |k,v|

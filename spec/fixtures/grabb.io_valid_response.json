@@ -1,0 +1,36 @@
+{
+    "video": {
+        "callback_url": null,
+        "cost": 1,
+        "created_at": "2011-07-17T14:50:39Z",
+        "developer_mode": false,
+        "external_id": null,
+        "filename": "ssCLGKk1JN",
+        "id": 393,
+        "number_of_thumbnails": 1,
+        "scale_mode": "pad",
+        "source": "http://example.com/grabbio/test.wmv",
+        "source_type": "http",
+        "status": "pending",
+        "thumbnail_format": "jpg",
+        "thumbnail_types": "individual",
+        "updated_at": "2011-07-17T14:50:39Z",
+        "upload_placeholders": true,
+        "upload_type": "s3",
+        "requested_thumbnails": [
+            {
+                "thumbnail": {
+                    "created_at": "2011-07-17T14:50:41Z",
+                    "filename": "ssCLGKk1JN_120x90_0.jpg",
+                    "height": 90,
+                    "id": 1408,
+                    "order": 0,
+                    "thumbnail_type": "individual",
+                    "updated_at": "2011-07-17T14:50:41Z",
+                    "video_id": 393,
+                    "width": 120
+                }
+            }
+        ]
+    }
+}
