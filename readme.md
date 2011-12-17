@@ -13,8 +13,7 @@ Usage
 
 ###Basic
 
-In its most basic form, the only required parameters are source, upload_url and
-your api keys.
+In its most basic form, the only required parameters are source, upload_url and your api keys.
 
     grabbio = Grabbio.new(YOUR_API_KEY, YOUR_API_SECRET);
     grabbio.grab(SOURCE_URL, UPLOAD_URL)
